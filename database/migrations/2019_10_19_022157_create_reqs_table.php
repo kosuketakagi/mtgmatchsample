@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReqTable extends Migration
+class CreateReqsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateReqTable extends Migration
      */
     public function up()
     {
-        Schema::create('request', function (Blueprint $table) {
+        Schema::create('reqs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('recruit_id')->unique();
-            $table->string('user_id')->unique();
+            $table->string('recruit_id');
+            $table->string('recruiter_id');
             $table->string('approval')->default(0);;
             $table->timestamps();
         });
@@ -31,7 +31,4 @@ class CreateReqTable extends Migration
     {
         Schema::dropIfExists('reqs');
     }
-
-
-
 }

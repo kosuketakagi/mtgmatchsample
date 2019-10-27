@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    {{-- 後の章で説明します --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- 各ページごとにtitleタグを入れるために@yieldで空けておきます。 --}}
@@ -15,47 +14,80 @@
     <!-- Scripts -->
     {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    <script src="{{ secure_asset('js/js.js') }}" defer></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    {{-- Laravel標準で用意されているCSSを読み込みます --}}
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    {{-- この章の後半で作成するCSSを読み込みます --}}
-{{--    <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">--}}
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
+
+
 <body>
-<div id="app">
-    {{-- 画面上部に表示するナビゲーションバーです。 --}}
-    <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
+@if (session('flash_message'))
+    <div class="flash_message">
+        {{ session('flash_message') }}
+    </div>
+@endif
 
-                </ul>
+    <header>
+        <div id="nav-drawer">
+            <input id="nav-input" type="checkbox" class="nav-unshown">
+            <label id="nav-open" for="nav-input"><span></span></label>
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+            <div id="nav-content">
+                <ul>
+                    <li class="han-list"><a href="http://127.0.0.1/admin/recruit/create">対戦相手を募集する</a></li>
+                    <li class="han-list"><a href="http://127.0.0.1/index">募集を探す</a></li>
+                    <li class="han-list"><a href="http://127.0.0.1/admin/recruit/request">リクエスト一覧</a></li>
+                    <li class="han-list"><a href="http://127.0.0.1/admin/recruit/mypage">My募集ページ</a></li>
+                    <li class="han-list"><a href="http://127.0.0.1/about">使い方</a></li>
+                    <li class="han-list"><a href="https://sugarlessmtg.com/">なぜこのサイトを作ろうと思ったのか(外部サイト)</a></li>
+                    <li class="han-list"><a href="https://sugarlessmtg.com/page-858">お問い合わせ(外部サイト)</a></li>
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        {{--                @if (Route::has('register'))--}}
+                        {{--                    <li class="nav-item">--}}
+                        {{--                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
+                        {{--                    </li>--}}
+                        {{--                @endif--}}
+                    @else
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href=" {{action('Auth\LoginController@Logout')}}" >
+                            ログアウト
+                        </a>
 
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
+                    @endguest
                 </ul>
             </div>
         </div>
-    </nav>
-    {{-- ここまでナビゲーションバー --}}
+    <div class="logo">
+        <a href="http://127.0.0.1/home" class="logo"><img src="{{ asset('images/logo.png') }}" class="logo" alt="logo"></a>
+        </div>
 
-    <main class="py-4">
+    </header>
+
+    <main>
         {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
         @yield('content')
     </main>
-</div>
+
+
+    <footer>
+        <a class="footer-text">© MTG Match by @sugarlessMTG</a>
+    </footer>
+
 </body>
 {{--</html>--}}

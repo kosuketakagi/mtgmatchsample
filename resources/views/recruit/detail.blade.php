@@ -2,8 +2,16 @@
 @section('title', '募集詳細')
 
 @section('content')
-    <a href="{{ action('Admin\RecruitController@edit', ['id' => $posts->id]) }}">編集</a>
 
+    @if($errors->any())
+        <div class="error">
+            <ul>
+                @foreach($errors->all() as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <div class="container">
         <div class="row">

@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2ca8dca-090f-459a-b6df-432726bfe749" name="Default Changelist" comment="" />
+    <list default="true" id="d2ca8dca-090f-459a-b6df-432726bfe749" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Admin/RecruitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Admin/RecruitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Recruit.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Recruit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Req.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/migrations/2019_10_14_043412_create_recruit_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/../database/migrations/2019_10_14_043412_create_recruit_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/migrations/2019_10_17_065717_create_reqs.table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/join.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/join.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/mypage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/mypage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/recruit/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/recruit/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/recruit/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/recruit/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,13 +37,18 @@
   <component name="FavoritesManager">
     <favorites_list name="routes" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1SAubvx81DbGqmCrdolSWVrjHEX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -29,18 +56,6 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -52,7 +67,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571018797541</updated>
-      <workItem from="1571018803125" duration="76514000" />
+      <workItem from="1571018803125" duration="167151000" />
+      <workItem from="1572150957389" duration="10488000" />
     </task>
     <servers />
   </component>
@@ -60,22 +76,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="399" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1571018925751">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state x="399" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1572150964753">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="399" y="257" key="com.intellij.ide.util.TipDialog/0.23.1440.804@0.23.1440.804" timestamp="1571018925751" />
+    <state x="399" y="258" key="com.intellij.ide.util.TipDialog/0.23.1440.806@0.23.1440.806" timestamp="1572150964753" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/web.php</url>
-          <line>16</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../resources/views/recruit/detail.blade.php</url>
-          <line>31</line>
+          <line>39</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

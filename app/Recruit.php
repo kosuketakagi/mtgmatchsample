@@ -17,4 +17,15 @@ class Recruit extends Model
         'pref_id' => 'required',
         'body' => 'required',
     );
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+      public function reqs()
+    {
+        return $this->hasMany('App\reqs');
+    }
+
 }

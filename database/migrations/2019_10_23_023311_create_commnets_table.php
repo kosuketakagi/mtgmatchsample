@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecruitTable extends Migration
+class CreateCommnetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateRecruitTable extends Migration
      */
     public function up()
     {
-        Schema::create('recruits', function (Blueprint $table) {
+        Schema::create('commnets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('recruit_id');
             $table->string('user_id');
-            $table->string('title');
-            $table->string('time');
-            $table->string('pref_id');
-            $table->string('shop');
-            $table->string('format');
             $table->string('body');
             $table->timestamps();
         });
@@ -33,6 +29,6 @@ class CreateRecruitTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recruits');
+        Schema::dropIfExists('comments');
     }
 }

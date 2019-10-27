@@ -1,4 +1,6 @@
 @extends('layouts.admin')
+@section('title', '募集一覧')
+
 
 @section('content')
 <div class="container">
@@ -19,11 +21,11 @@
                     <div class="text col-md-6">
 
                         <div class="title">
-                            {{ str_limit($recruit->name, 150) }}
+                            {{ $recruit->user->name }}
                         </div>
 
                         <div class="title">
-                            {{ str_limit($recruit->twitter_id, 150) }}
+                            {{ str_limit($recruit->user->twitter_id, 150) }}
                         </div>
 
                         <div class="title">

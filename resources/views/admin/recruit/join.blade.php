@@ -7,8 +7,6 @@
             <div class="col-md-8 mx-auto">
                 <h2>リクエストを送りました！</h2>
 
-
-
     </div>
 
 @endsection

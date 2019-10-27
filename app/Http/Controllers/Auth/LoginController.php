@@ -13,7 +13,7 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     public function __construct()
     {
@@ -64,4 +64,13 @@ class LoginController extends Controller
 
         }
     }
+
+    // ログアウト
+    public function Logout()
+    {
+        \Auth::logout();
+        return redirect('/home');
+    }
+
+
 }

@@ -18,13 +18,9 @@
                 <div class="row">
                     <div class="text col-md-6">
 
-                        <div class="title">
-                            {{ str_limit($recruit->name, 150) }}
-                        </div>
-
-                        <div class="title">
-                            {{ str_limit($recruit->twitter_id, 150) }}
-                        </div>
+{{--                        <div class="title">--}}
+{{--                            {{ str_limit($recruit->name, 150) }}--}}
+{{--                        </div>--}}
 
                         <div class="title">
                             {{ str_limit($recruit->title, 150) }}
@@ -46,7 +42,8 @@
                         </div>
 
                         <div>
-                            <a href="{{ action('AllviewController@detail', ['id' => $recruit->id]) }}">詳細</a>
+                            <a href="{{ action('IndexController@mydetail', ['id' => $recruit->id]) }}">詳細</a>
+                            <a href="{{ action('Admin\RecruitController@edit', ['id' => $recruit->id]) }}">編集</a>
                         </div>
 
                     </div>
@@ -64,5 +61,5 @@
 
 </div>
 
-{{$posts->links()}}
+{{--{{$posts->links()}}--}}
 @endsection

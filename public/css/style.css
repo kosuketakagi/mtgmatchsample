@@ -1,0 +1,221 @@
+* {
+      margin: 0px;
+      padding: 0px;
+  }
+
+  /* @media screen and (min-width:499x)  { 
+    .logo{
+      width: auto;
+      height: 30px;
+    }
+
+    } */
+
+    
+/* ヘッダー */
+  
+header {
+    padding:10px;
+    background: white;
+    display:flex;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    
+      }
+
+.logo{
+  margin-left: auto; 
+  margin-right: auto;
+  margin-top: auto; 
+  margin-bottom: auto; 
+  width: auto; /* スマホ用 */
+  height: 30px; /* スマホ用 */
+}
+
+  #nav-drawer {
+    float:right;
+    display:inline-block;
+    margin-top: auto; 
+  margin-bottom: auto; 
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+  }
+
+  .han-list:hover {
+    background: #e4e4e4;
+  }
+
+
+  .han-list a{
+  display: block;
+  color: #333;
+  font-size: 14px;
+  padding: 1em;
+  text-decoration: none;
+  transition-duration: 0.2s
+  }
+  
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: 0.5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+/* ヘッダーここまで */
+
+/* トップメイン */
+.top-image{
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.top-button{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  margin-bottom: 40px;
+}
+
+.top-match{
+
+}
+
+.top-mess{
+  width: 100%;
+  text-align: center;
+  font-size:20px;
+}
+
+
+main.ul{
+  list-style: none;
+}
+
+.top-comments{
+  margin: 10px;
+}
+
+.raised-button{
+  display: inline-block;
+  background-color: #26a69b;/*背景色*/
+  color: #FFF;/*文字色*/
+  font-size: 1.3em;/*文字サイズ*/
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: 0.05em;/*字間*/
+  padding: 0.4em 1em;/*ボタン内の余白*/
+  border-radius: 3px;/*角の丸み*/
+    cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+  -webkit-tap-highlight-color: transparent;
+  transition: .3s ease-out;/*変化を緩やかに*/
+}
+
+.raised:hover{
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
+
+.btn-social-icon-twitter {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  color: #1da1f3;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.btn-social-icon-twitter:hover {
+  color:#88daff;
+  transition: .5s;
+}
+
+.btn-social-icon-twitter__square {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 35px;
+  line-height: 50px;
+  color: #FFF;
+  background: #1da1f3;
+}
+
+.btn-social-icon-twitter__square i {
+  line-height: 50px;
+}
+
+
+.create{
+  margin-top: 10px;
+}
+
+
+footer{
+background-color: lightcyan;
+opacity: 0.5;
+}

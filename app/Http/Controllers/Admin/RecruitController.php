@@ -5,8 +5,13 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Recruit;
-use App\Req;
+use App\reqs;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Validation;
+use App\Comment;
+use function Couchbase\defaultDecoder;
+use Illuminate\Validation\Rule;
+
 
 class RecruitController extends Controller
 {
@@ -15,7 +20,6 @@ class RecruitController extends Controller
         return view('admin/recruit/create', ['user' => $user]);
     }
 
-    // 以下を追記
     public function create(Request $request)
     {
         $this->validate($request, Recruit::$rules);
@@ -26,48 +30,53 @@ class RecruitController extends Controller
         $recruit->fill($form);
         $recruit->save();
 
-
         return redirect('admin/recruit/create');
     }
 
     public function edit(Request $request)
     {
-        $posts = Recruit::find($request->id);
+        $post = Recruit::find($request->id);
 
-        return view('admin/recruit/edit', ['recruits_form' => $posts]);
+        return view('admin/recruit/edit', ['post' => $post]);
     }
-
 
     public function update(Request $request)
     {
-        // Validationをかける
         $this->validate($request, Recruit::$rules);
 
-        // News Modelからデータを取得する
-        $posts = Recruit::find($request->id);
+        $recruit = Recruit::find($request->id);
 
-        // 送信されてきたフォームデータを格納する
         $recruits_form = $request->all();
 
+        //dd($recruits_form);
+        $recruit->fill($recruits_form);
         unset($recruits_form['_token']);
 
-        // 該当するデータを上書きして保存する
-        $posts->fill($recruits_form)->save();
-
-        return redirect('admin/recruit/edit');
+        $recruit->save();
+       // dd($recruit);
+        return redirect('admin/recruit/mypage');
     }
 
-    public function join(Request $request) {
-        $request_user = new Req;
 
-        $posts = Recruit::find($request->id);
+    public function join(Request $request ) {
+        $request_user = new reqs;
 
-        $request_user->recruit_id= $posts->id;
+        $request_user->recruit_id = $request->id;
 
         $user = Auth::user();
 
-        $request_user->name = $user->name;
-        $request_user->twitter_id= $user->twitter_id;
+        $request_user->recruiter_id = $user->id;
+
+       // dd($request_user);
+
+        \Validator::validate($request_user->toArray(),
+            ['recruit_id' => [
+                'required',
+                Rule::unique('reqs')->where(function ($query) use ($request_user){
+                    return $query->where('recruit_id', $request_user->recruit_id)
+                        ->where('recruiter_id', $request_user->recruiter_id);
+                })
+            ]]);
 
         $request_user->save();
 
@@ -75,6 +84,72 @@ class RecruitController extends Controller
     }
 
 
+    public function delete(Request $request)
+    {
+
+        $recruit = Recruit::find($request->id);
+
+        $recruit->delete();
+
+        return redirect('admin/recruit/mypage');
 
 
+    }
+
+    public function deleteComment(Request $request)
+    {
+
+        $comment = Comment::find($request->id);
+
+        $comment->delete();
+
+        return redirect('admin/recruit/mypage');
+
+    }
+
+
+
+    public function comment(Request $request)
+    {
+        \Validator::validate($request->toArray(),['body' => 'required',]);
+
+        $comment = new Comment;
+        $user = Auth::user();
+        $comment->user_id = $user->id;
+        $form = $request->all();
+
+        $comment->fill($form);
+       // dd($comment);
+        $comment->save();
+
+        $comments=Comment::  where('recruit_id', $comment->recruit_id)->get();
+        $posts = Recruit::find($comment->recruit_id);
+
+        return view('admin.recruit.detail', ['posts' => $posts],array('comments' => $comments));
+    }
+
+
+    public function approval(Request $request)
+    {
+        $req = reqs ::find($request->id);
+        //dd($req );
+        $req->approval = 1;
+        $req->save();
+
+        return redirect('admin/recruit/request');
+    }
+
+
+    public function requestIndex(Request $request)
+    {
+        $user = Auth::user();
+
+        $send_reqs =  reqs::where('recruiter_id',$user->id)->get();
+
+
+        $recruits = Recruit::where('user_id',$user->id)->get();
+
+
+        return view('admin.recruit.request',['send_reqs' => $send_reqs, 'recruits' => $recruits]);
+    }
 }

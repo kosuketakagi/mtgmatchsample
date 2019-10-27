@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>新規募集投稿</h2>
+                <h2 class="create">新規募集ページ</h2>
                 <form action="{{ action('Admin\RecruitController@create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
@@ -18,8 +18,7 @@
 
                         <div hidden>
 
-                                <input type="text" class="form-control" name="name" value= "{{ $user->name }}">
-                            <input type="text" class="form-control" name="twitter_id" value="{{ $user->twitter_id}}">
+                                <input type="text" class="form-control" name="user_id" value= "{{ $user->id }}">
 
                         </div>
 
@@ -32,18 +31,25 @@
                         </div>
                     </div>
 
+
                         <div class="form-group row">
-                            <label class="col-md-2" for="time">日時</label>
+                            <label class="col-md-2" for="time">遊びやすい日(平日or週末)</label>
                             <div class="col-md-10">
-                                <input type="datetime-local" class="form-control" name="time" value="{{ old('time') }}">
+                                <select class="form-control" name="time" value="{{ old('time') }}">
+                                    <option value="平日">平日</option>
+                                    <option value="平日">平日の夜</option>
+                                    <option value="週末">週末</option>
+                                    <option value="いつでもオッケー">いつでもオッケー</option>
+                                </select>
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <label class="col-md-2" for="pref_id">都道府県</label>
                             <div class="col-md-10">
 
                                 <select name="pref_id"　　value="{{ old('shop') }}">
-                                    <option value="" selected>都道府県</option>
+                                    <option value="" selected>選んで下さい</option>
                                     <option value="北海道">北海道</option>
                                     <option value="青森県">青森県</option>
                                     <option value="岩手県">岩手県</option>
@@ -114,22 +120,18 @@
                                     <option value="シールド">シールド</option>
                                     <option value="ドラフト">ドラフト</option>
                                     <option value="Pauper">Pauper</option>
+                                    <option value="パイオニア">パイオニア</option>
                                     <option value="旧枠モダン">旧枠モダン</option>
                                 </select>
                             </div>
                         </div>
 
-
-
-
                         <div class="form-group row">
                         <label class="col-md-2" for="body">コメント</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body" rows="8">{{ old('body') }}</textarea>
                         </div>
                     </div>
-
-
 
 
                     {{ csrf_field() }}
