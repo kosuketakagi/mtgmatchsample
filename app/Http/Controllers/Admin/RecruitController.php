@@ -67,8 +67,6 @@ class RecruitController extends Controller
 
         $request_user->recruiter_id = $user->id;
 
-       // dd($request_user);
-
         \Validator::validate($request_user->toArray(),
             ['recruit_id' => [
                 'required',
@@ -111,6 +109,7 @@ class RecruitController extends Controller
 
     public function comment(Request $request)
     {
+        $user = Auth::user();
         \Validator::validate($request->toArray(),['body' => 'required',]);
 
         $comment = new Comment;
@@ -125,15 +124,23 @@ class RecruitController extends Controller
         $comments=Comment::  where('recruit_id', $comment->recruit_id)->get();
         $posts = Recruit::find($comment->recruit_id);
 
-        return view('admin.recruit.detail', ['posts' => $posts],array('comments' => $comments));
+        return view('admin.recruit.detail', ['user' => $user,'posts' => $posts,'comments' => $comments]);
     }
 
 
     public function approval(Request $request)
     {
         $req = reqs ::find($request->id);
-        //dd($req );
         $req->approval = 1;
+        $req->save();
+
+        return redirect('admin/recruit/request');
+    }
+
+    public function notApproval(Request $request)
+    {
+        $req = reqs ::find($request->id);
+        $req->approval = 0;
         $req->save();
 
         return redirect('admin/recruit/request');

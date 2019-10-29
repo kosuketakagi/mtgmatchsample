@@ -17,5 +17,12 @@ class reqs extends Model
         return $this->belongsTo('App\User', 'recruiter_id');
     }
 
+    public function recruit()
+    {
+        return $this->belongsTo('App\Recruit');
+    }
+
+
+
 
 }

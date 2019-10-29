@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
+                <br>
                 <h2>投稿編集</h2>
 
 

@@ -13,11 +13,8 @@ class IndexController extends Controller
 {
     public function index(Request $request)
     {
+        $posts = Recruit::paginate(10);
 
-//        Recruit::with('users:name,twitter_id')->get();
-        $posts = Recruit::paginate(2);
-
-        //dd($posts->user()->name);
         return view('recruit.index', array('posts' => $posts));
     }
 
@@ -44,16 +41,23 @@ class IndexController extends Controller
    //マイページから飛べる詳細
     public function mydetail(Request $request)
     {
+
+        $user = Auth::user();
         $posts = Recruit::find($request->id);
 
+//        reqs::where('approval',$user->id)->get();
+//
+//        if( $user->id !== $posts->user_id && $user->id !==  ){
+//            return redirect('/home');
+//        }
+//
         if(empty($posts)){
             return redirect('/')->with('flash_message','ページがありません');
         }
 
-
         $comments=Comment::where('recruit_id', $request->id)->get();
 
-        return view('admin.recruit.detail', ['posts' => $posts],array('comments' => $comments));
+        return view('admin.recruit.detail', ['user' => $user,'posts' => $posts,'comments' => $comments]);
 
     }
 
@@ -68,6 +72,10 @@ class IndexController extends Controller
         return view('recruit.about');
     }
 
+    public function info(Request $request)
+    {
+        return view('recruit.info');
+    }
 
 }
 

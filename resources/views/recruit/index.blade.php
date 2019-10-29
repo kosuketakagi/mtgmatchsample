@@ -4,67 +4,45 @@
 
 @section('content')
 <div class="container">
-
-    <div class="col-md-4">
-        <a href="{{ action('Admin\RecruitController@add') }}" role="button" class="btn btn-primary">新規作成</a>
-    </div>
-
     <hr color="#c0c0c0">
 
-    <hr color="#c0c0c0">
-    <div class="row">
-        <div class="posts col-md-8 mx-auto mt-3">
-            <a helf="https://blog.hiroyuki90.com/articles/laravel-bbs/">
             @foreach($posts as $recruit)
-            <div class="post　>
-                <div class="row">
-                    <div class="text col-md-6">
+                <div class="box11">
+                        <div class="index-title">
+                         {{ str_limit($recruit->title, 30) }}
 
-                        <div class="title">
-                            {{ $recruit->user->name }}
-                        </div>
+                            <span class="index-time">
+                        投稿日時{{ $recruit->created_at->format('Y.m.d') }}
+                            </span>
 
-                        <div class="title">
-                            {{ str_limit($recruit->user->twitter_id, 150) }}
                         </div>
 
-                        <div class="title">
-                            {{ str_limit($recruit->title, 150) }}
-                        </div>
-                        <div class="title">
-                            {{ str_limit($recruit->time, 150) }}
-                        </div>
-                        <div class="title">
-                            {{ str_limit($recruit->format, 150) }}
-                        </div>
-                        <div class="title">
-                            {{ str_limit($recruit->shop, 150) }}
-                        </div>
-                        <div class="title">
-                            {{ str_limit($recruit->pref_id, 150) }}
-                        </div>
+                       <ul class="index-ul">
+                           <li> twitter-name<b class="index-strong"> {{$recruit->user->name }}</b></li>
+                           <li>遊びやすい日<b class="index-strong">{{$recruit->time}}</b> </li>
+                           <li>
+                            対戦希望フォーマット<b class="index-strong">{{ str_limit($recruit->format, 20) }}</b>
+                            </li>
+
+                           <li>ショップ名<b class="index-strong">{{ str_limit($recruit->shop, 20) }}</b>// {{ str_limit($recruit->pref_id, 10) }} </li>
+
+                       </ul>
+
                         <div class="body mt-3">
-                            {{ str_limit($recruit->body, 1500) }}
+                            {{ str_limit($recruit->body, 200) }}
                         </div>
 
-                        <div>
-                            <a href="{{ action('IndexController@detail', ['id' => $recruit->id]) }}">詳細</a>
+                        <div class="index-button">
+                            <a href="{{ action('IndexController@detail', ['id' => $recruit->id]) }}" class="index-button">詳細</a>
                         </div>
 
-                    </div>
                 </div>
-            </div>
-    </a>
-            <hr color="#c0c0c0">
             @endforeach
-        </div>
-    </div>
-<div >
-</div>
+
+
 
 </div>
 
-</div>
+<div class="pagenation" >{{$posts->links()}}</div>
 
-{{$posts->links()}}
 @endsection

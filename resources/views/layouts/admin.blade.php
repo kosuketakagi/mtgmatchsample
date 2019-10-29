@@ -48,27 +48,27 @@
             <label class="nav-unshown" id="nav-close" for="nav-input"></label>
             <div id="nav-content">
                 <ul>
-                    <li class="han-list"><a href="http://127.0.0.1/admin/recruit/create">対戦相手を募集する</a></li>
-                    <li class="han-list"><a href="http://127.0.0.1/index">募集を探す</a></li>
-                    <li class="han-list"><a href="http://127.0.0.1/admin/recruit/request">リクエスト一覧</a></li>
-                    <li class="han-list"><a href="http://127.0.0.1/admin/recruit/mypage">My募集ページ</a></li>
-                    <li class="han-list"><a href="http://127.0.0.1/about">使い方</a></li>
-                    <li class="han-list"><a href="https://sugarlessmtg.com/">なぜこのサイトを作ろうと思ったのか(外部サイト)</a></li>
+                    <li class="han-list"><a href="/admin/recruit/create">対戦相手を募集する</a></li>
+                    <li class="han-list"><a href="/index">募集を探す</a></li>
+                    <li class="han-list"><a href="/admin/recruit/request">リクエスト一覧</a></li>
+                    <li class="han-list"><a href="/admin/recruit/mypage">My募集ページ</a></li>
+                    <li class="han-list"><a href="/about">使い方</a></li>
+                    <li class="han-list"><a href="/info">利用規約</a></li>
+{{--                    <li class="han-list"><a href="https://sugarlessmtg.com/">なぜこのサイトを作ろうと思ったのか(外部サイト)</a></li>--}}
                     <li class="han-list"><a href="https://sugarlessmtg.com/page-858">お問い合わせ(外部サイト)</a></li>
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        {{--                @if (Route::has('register'))--}}
-                        {{--                    <li class="nav-item">--}}
-                        {{--                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
-                        {{--                    </li>--}}
-                        {{--                @endif--}}
-                    @else
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href=" {{action('Auth\LoginController@Logout')}}" >
-                            ログアウト
-                        </a>
 
+                    @guest
+                        <li class="han-list">
+                            <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+                        </li>
+                    @else
+
+                        <li class="han-list">
+                            <form action="{{ route('logout') }}" method="post">
+                                {{ csrf_field() }}
+                                <input type="submit" value="ログアウト" />
+                            </form>
+                        </li>
                     @endguest
                 </ul>
             </div>
@@ -76,11 +76,9 @@
     <div class="logo">
         <a href="http://127.0.0.1/home" class="logo"><img src="{{ asset('images/logo.png') }}" class="logo" alt="logo"></a>
         </div>
-
     </header>
 
     <main>
-        {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
         @yield('content')
     </main>
 

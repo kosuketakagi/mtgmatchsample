@@ -11,18 +11,11 @@
 {{--                    <form method="POST" action="{{ route('login') }}">--}}
                         @csrf
 
-                    <a href="#" class="btn-social-flat">
-  <span class="btn-social-flat-icon btn-social-flat-icon--twitter">
-    <i class="fa fa-twitter"></i>
-  </span>
-                        <span class="btn-social-flat-text">  <a href="{{ url('login/twitter')}}" class="btn btn-social-icon btn-twitter">twitter</a></span>
-                    </a>
+                    <a href="{{ url('login/twitter')}}"> <img src="{{ asset('images/twitter-logo.png')}}" class="twitter-logo"><p class="login-text">twitterでログイン</p></a>
 
-                        <a href="{{ url('login/twitter')}}" class="btn btn-social-icon btn-twitter">twitter</a>
 
-                    <a href="#" class="btn-social-icon-twitter">
-                        <span class="btn-social-icon-twitter__square"><i class="fa fa-twitter"></i></span> Follow Me
-                    </a>
+<p>ログインにTwitterのメールアドレスを使用いたします。</p><p>ログインによって<a href="/info">利用規約</a>に同意したとみなします。</p>
+
 {{--                        <div class="form-group row" type="hidden">--}}
 {{--                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>--}}
 

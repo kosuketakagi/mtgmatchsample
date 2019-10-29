@@ -38,7 +38,6 @@ class User extends Authenticatable
     ];
 
 
-
     public function getReqs()
     {
         return $this->hasMany('App\reqs');

@@ -66,11 +66,12 @@ class LoginController extends Controller
     }
 
     // ログアウト
-    public function Logout()
+    public function logout()
     {
-        \Auth::logout();
+
+        Auth::logout();
+        //dd(Auth::user());
         return redirect('/home');
     }
-
 
 }

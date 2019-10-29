@@ -2,25 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2ca8dca-090f-459a-b6df-432726bfe749" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Comment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Admin/RecruitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Admin/RecruitController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Recruit.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Recruit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Req.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/migrations/2019_10_14_043412_create_recruit_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/../database/migrations/2019_10_14_043412_create_recruit_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/migrations/2019_10_17_065717_create_reqs.table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/reqs.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/reqs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/join.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/join.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/mypage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/mypage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/request.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/request.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/home.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/recruit/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/recruit/about.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/recruit/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/recruit/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/recruit/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/recruit/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/recruit/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/recruit/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/vendor/pagination/bootstrap-4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/vendor/pagination/bootstrap-4.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/web.php" afterDir="false" />
     </list>
@@ -68,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571018797541</updated>
       <workItem from="1571018803125" duration="167151000" />
-      <workItem from="1572150957389" duration="10488000" />
+      <workItem from="1572150957389" duration="39517000" />
     </task>
     <servers />
   </component>
@@ -87,8 +88,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../resources/views/recruit/detail.blade.php</url>
-          <line>39</line>
+          <line>41</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../resources/views/admin/recruit/request.blade.php</url>
+          <line>53</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

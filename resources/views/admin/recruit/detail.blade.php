@@ -1,53 +1,57 @@
 @extends('layouts.admin')
-@section('title', 'anata')
+@section('title', '投稿詳細')
 
 @section('content')
 
-
-
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <h1>募集詳細</h1>
-                <div class="title">
-                    {{$posts->title }}
+
+{{--        リクエスト詳細--}}
+            <div class="box11" class="comments-req">
+                <div class="index-title">
+                    {{ str_limit($posts->title, 30) }}
+                    <span class="index-time">
+                        投稿日時{{ $posts->created_at->format('Y.m.d') }}
+                            </span>
                 </div>
-                <div class="title">
-                    {{$posts->time }}
+                <ul class="index-ul">
+                    <li> twitter-name<b class="index-strong"><a href="https://twitter.com/{{($posts->user->twitter_id)}}">{{$posts->user->name }}</a></b></li>
+                    <li>遊びやすい日<b class="index-strong">{{$posts->time}}</b> </li>
+                    <li>
+                        対戦希望フォーマット<b class="index-strong">{{ str_limit($posts->format, 20) }}</b>
+                    </li>
+
+                    <li>ショップ名<b class="index-strong">{{ str_limit($posts->shop, 20) }}</b>// {{ str_limit($posts->pref_id, 10) }} </li>
+                </ul>
+
+                <div class="body mt-3">
+                    {{ str_limit($posts->body, 200) }}
                 </div>
-                <div class="title">
-                    {{$posts->format }}
-                </div>
-                <div class="title">
-                    {{$posts->shop }}
-                </div>
-                <div class="title">
-                    {{$posts->pref_id }}
-                </div>
-                <div class="title">
-                    {{$posts->body }}
-                </div>
+            </div>
 
 
                 @foreach($comments as $comment)
 
                     <div class="text col-md-6">
-                        <div class="body mt-3">
-                            {{ str_limit($comment->user_id, 1500) }}
+                        <div class="body mt-3" class="">
+                        <strong><a href="https://twitter.com/{{($comment->user->twitter_id)}}">{{($comment->user->name) }}</a></strong>
                         </div>
+
                         <div class="body mt-3">
-                            {{ str_limit($comment->body, 1500) }}
+                            {{ str_limit($comment->body, 1000) }}
                         </div>
                     </div>
 
+
+                    @if($user->id == $comment->user_id || $user->id == $posts->user_id)
                     <div class="col-md-4">
                         <form action="{{ action('Admin\RecruitController@deleteComment') }}" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="id" value="{{ $comment->id }}">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="削除">
-                            <form>
+                            <br>
+                            <input type="submit" class="btn-danger"  value="削除">
+                            </form>
                     </div>
-
+                    @endif
                     <hr color="#c0c0c0">
                 @endforeach
 
@@ -60,30 +64,25 @@
                             @endforeach
                         </ul>
                     @endif
-                        <div hidden>
 
+                        <div hidden>
                             <input type="text" class="form-control" name="recruit_id" value= "{{ $posts->id }}">
 
                         </div>
 
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">コメント</label>
+                        <label class="col-md-2" for="body">コメントする</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
                         </div>
                     </div>
 
-
                         {{ csrf_field() }}
-
-
                         <button type="submit" class="btn btn-primary">
                             コメントする
                         </button>
-
                 </form>
-
-
+    </div>
 
 
 @endsection

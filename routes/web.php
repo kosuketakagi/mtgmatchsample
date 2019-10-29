@@ -13,22 +13,23 @@ Route::group(['middleware' => 'auth','prefix' => 'admin'], function() {
     Route::get('recruit/detail', 'IndexController@mydetail');
     Route::post('recruit/detail', 'Admin\RecruitController@comment');
     Route::get('recruit/request', 'Admin\RecruitController@requestIndex');
-    Route::post('recruit/request', 'Admin\RecruitController@approval');
-
+    Route::post('recruit/request/approval', 'Admin\RecruitController@approval');
+    Route::post('recruit/request/notapproval', 'Admin\RecruitController@notApproval');
 });
 
 Route::get('index', 'IndexController@index');
 Route::get('detail', 'IndexController@detail');
 Route::get('/home', 'IndexController@topIndex');
 Route::get('/about','IndexController@about');
+Route::get('/info','IndexController@info');
 
 
 
 Route::get('/login/{social}', 'Auth\LoginController@socialLogin')->where('social', 'facebook|twitter');
 //コールバック用
 Route::get('/login/{social}/callback', 'Auth\LoginController@handleProviderCallback')->where('social', 'facebook|twitter');
-Route::get("auth/twitter/logout","Auth\LoginController@Logout");
 
+//Route::get("auth/logout","Auth\LoginController@logout");
 
 
 Auth::routes();

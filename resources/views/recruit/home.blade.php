@@ -8,7 +8,7 @@
 <div class="top-comments">
     <div>
     <h2 class="top-match">『MTG Match』とは</h2>
-<p><strong>Magic:The Gatheringの対戦相手を探すことの出来るツールです。</strong></p>
+<p><strong>Magic:The Gatheringの対戦相手を探すことが出来るツールです。</strong></p>
 
     <ul>
         <li>アリーナで始めてみたけど、紙で遊べる友達がいない。</li>
