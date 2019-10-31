@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2ca8dca-090f-459a-b6df-432726bfe749" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571018797541</updated>
       <workItem from="1571018803125" duration="167151000" />
-      <workItem from="1572150957389" duration="48203000" />
+      <workItem from="1572150957389" duration="48462000" />
     </task>
     <servers />
   </component>
@@ -74,6 +74,11 @@
           <url>file://$PROJECT_DIR$/../resources/views/admin/recruit/request.blade.php</url>
           <line>79</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../resources/views/layouts/admin.blade.php</url>
+          <line>87</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
