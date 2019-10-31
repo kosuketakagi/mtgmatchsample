@@ -74,7 +74,7 @@
             </div>
         </div>
     <div class="logo">
-        <a href="http://home" class="logo"><img src="{{ asset('images/logo.png') }}" class="logo" alt="logo"></a>
+        <a href="/home" class="logo"><img src="{{ asset('images/logo.png') }}" class="logo" alt="logo"></a>
         </div>
     </header>
 
