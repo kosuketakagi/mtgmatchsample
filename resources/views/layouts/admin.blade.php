@@ -66,7 +66,7 @@
                         <li class="han-list">
                             <form action="{{ route('logout') }}" method="post">
                                 {{ csrf_field() }}
-                                <input type="submit" value="ログアウト" />
+                                <input type="submit" value="　ログアウト" />
                             </form>
                         </li>
                     @endguest

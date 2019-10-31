@@ -12,7 +12,7 @@
                          {{ str_limit($recruit->title, 30) }}
 
                             <span class="index-time">
-                        投稿日時{{ $recruit->created_at->format('Y.m.d') }}
+                        投稿日時{{ $recruit->updated_at->format('Y.m.d') }}
                             </span>
 
                         </div>

@@ -11,7 +11,7 @@
                 <a href="{{ action('IndexController@mydetail', ['id' => $recruit->id]) }}"> {{ str_limit($recruit->title, 24) }}</a>
 
                             <span class="index-time">
-                        投稿日時{{ $recruit->created_at->format('Y.m.d') }}
+                        編集日時{{ $recruit->updated_at->format('Y.m.d') }}
                             </span>
                             <a href="{{ action('Admin\RecruitController@edit', ['id' => $recruit->id])}}" class="btn-square-little-rich">編集</a>
             </div>

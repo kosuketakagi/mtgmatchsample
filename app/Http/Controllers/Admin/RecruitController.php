@@ -151,10 +151,10 @@ class RecruitController extends Controller
     {
         $user = Auth::user();
 
-        $send_reqs =  reqs::where('recruiter_id',$user->id)->get();
+        $send_reqs =  reqs::latest('updated_at')->where('recruiter_id',$user->id)->get();
 
 
-        $recruits = Recruit::where('user_id',$user->id)->get();
+        $recruits = Recruit::latest('created_at')->where('user_id',$user->id)->get();
 
 
         return view('admin.recruit.request',['send_reqs' => $send_reqs, 'recruits' => $recruits]);
