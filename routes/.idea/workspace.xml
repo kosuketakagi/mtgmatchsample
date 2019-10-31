@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2ca8dca-090f-459a-b6df-432726bfe749" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Admin/RecruitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Admin/RecruitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/mypage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/mypage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/admin/recruit/request.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/admin/recruit/request.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/recruit/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/recruit/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/recruit/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/recruit/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d2ca8dca-090f-459a-b6df-432726bfe749" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571018797541</updated>
       <workItem from="1571018803125" duration="167151000" />
-      <workItem from="1572150957389" duration="47580000" />
+      <workItem from="1572150957389" duration="47785000" />
     </task>
     <servers />
   </component>
