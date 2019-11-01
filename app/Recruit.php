@@ -28,4 +28,10 @@ class Recruit extends Model
         return $this->hasMany('App\reqs');
     }
 
+    public function reqs_approval()
+    {
+        return $this->hasMany('App\reqs')->where('approval', '=', 1);
+    }
+
+
 }

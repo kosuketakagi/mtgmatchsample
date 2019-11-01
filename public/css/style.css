@@ -279,6 +279,10 @@ main.li{
   text-align: left;
 }
 
+.index-approval-count{
+  margin-left: 15px;
+  color: red;
+}
 
 /* index ここまで */
 .detail-bottun{

@@ -10,7 +10,6 @@
                 <div class="box11">
                         <div class="index-title">
                          {{ str_limit($recruit->title, 30) }}
-
                             <span class="index-time">
                         投稿日時{{ $recruit->updated_at->format('Y.m.d') }}
                             </span>
@@ -32,8 +31,9 @@
                             {{ str_limit($recruit->body, 200) }}
                         </div>
 
-                        <div class="index-button">
+                        <div>
                             <a href="{{ action('IndexController@detail', ['id' => $recruit->id]) }}" class="index-button">詳細</a>
+                           <strong class="index-approval-count">{{count($recruit->reqs_approval)}}人参加中！！</strong>
                         </div>
 
                 </div>
