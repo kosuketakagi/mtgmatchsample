@@ -18,7 +18,7 @@
             <div class="col-md-8 mx-auto">
                 <div class="box11">
                     <div class="index-title">
-                        {{ str_limit($posts->title, 30) }}　
+                        {{ $posts->title }}　
                         <span class="index-time">
                         投稿日時{{ $posts->created_at->format('Y.m.d') }}
                             </span>
@@ -27,14 +27,14 @@
                         <li> twitter-name<b class="index-strong"><a href="https://twitter.com/{{($posts->user->twitter_id)}}">{{$posts->user->name }}</a></b></li>
                         <li>遊びやすい日<b class="index-strong">{{$posts->time}}</b> </li>
                         <li>
-                            対戦希望フォーマット<b class="index-strong">{{ str_limit($posts->format, 20) }}</b>
+                            対戦希望フォーマット<b class="index-strong">{{ $posts->format}}</b>
                         </li>
 
-                        <li>ショップ名<b class="index-strong">{{ str_limit($posts->shop, 20) }}</b>// {{ str_limit($posts->pref_id, 10) }} </li>
+                        <li>ショップ名<b class="index-strong">{{ $posts->shop}}</b>// {{ $posts->pref_id }} </li>
                     </ul>
 
                     <div class="body mt-3">
-                        {{ str_limit($posts->body, 200) }}
+                        {{ $posts->body}}
                     </div>
                 </div>
 
