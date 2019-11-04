@@ -33,13 +33,12 @@
 
 
 {{--    twitterカード--}}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:card" content="summary_large_image" /> <!--①-->
+    <meta name="twitter:card" content="summary" /> <!--①-->
     <meta name="twitter:site" content="@Sugarless" /> <!--②-->
     <meta property="og:url" content="https://mtgmatch.sugarlessmtg.com/home" /> <!--③-->
     <meta property="og:title" content="MTG Match" /> <!--④-->
     <meta property="og:description" content="Magic:The Gatheringの対戦相手を探すことが出来るサイトです。マジックをもっと身近に楽しもう!" /> <!--⑤-->
-    <meta property="og:image" content="https://mtgmatch.sugarlessmtg.com/images/ddg-29-heroes-reunion.jpg" /> <!--⑥-->
+    <meta property="og:image" content="//images/ddg-29-heroes-reunion.jpg" /> <!--⑥-->
 
 
 
