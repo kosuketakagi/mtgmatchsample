@@ -9,7 +9,7 @@
             @foreach($posts as $recruit)
                 <div class="box11">
                         <div class="index-title">
-                         {{ str_limit($recruit->title, 30) }}
+                         {{ $recruit->title }}
                             <span class="index-time">
                         投稿日時{{ $recruit->updated_at->format('Y.m.d') }}
                             </span>
@@ -20,15 +20,15 @@
                            <li> twitter-name<b class="index-strong"> {{$recruit->user->name }}</b></li>
                            <li>遊びやすい日<b class="index-strong">{{$recruit->time}}</b> </li>
                            <li>
-                            対戦希望フォーマット<b class="index-strong">{{ str_limit($recruit->format, 20) }}</b>
+                            対戦希望フォーマット<b class="index-strong">{{$recruit->format}}</b>
                             </li>
 
-                           <li>ショップ名<b class="index-strong">{{ str_limit($recruit->shop, 20) }}</b>// {{ str_limit($recruit->pref_id, 10) }} </li>
+                           <li>ショップ名<b class="index-strong">{{ $recruit->shop }}</b>// {{ $recruit->pref_id}} </li>
 
                        </ul>
 
                         <div class="body mt-3">
-                            {{ str_limit($recruit->body, 200) }}
+                            {{$recruit->body}}
                         </div>
 
                         <div>
