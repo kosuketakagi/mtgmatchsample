@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'トップページ')
+@section('title', 'MTG Match')
 
 
 @section('content')
