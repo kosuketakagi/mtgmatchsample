@@ -22,6 +22,7 @@ Route::get('detail', 'IndexController@detail');
 Route::get('/home', 'IndexController@topIndex');
 Route::get('/about','IndexController@about');
 Route::get('/info','IndexController@info');
+Route::get('/login_error','IndexController@login_error');
 
 
 

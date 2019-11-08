@@ -31,6 +31,11 @@ class LoginController extends Controller
     {
         //ソーシャルサービス（情報）を取得
         $userSocial = Socialite::driver('twitter')->user();
+
+        if(empty($userSocial->getEmail())){
+            return redirect('/login_error');
+        }
+
         //emailで登録を調べる
         $user = User::where(['email' => $userSocial->getEmail()])->first();
 

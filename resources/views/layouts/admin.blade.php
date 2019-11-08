@@ -40,7 +40,7 @@
     <meta property="og:description" content="Magic:The Gatheringの対戦相手を探すことが出来るサイトです。マジックをもっと身近に楽しもう!" /> <!--⑤-->
     <meta property="og:image" content="{{ asset('images/ddg-29-heroes-reunion.jpg')}}" /> <!--⑥-->
 
-    <link rel="shortcut icon" href="{{ asset('favicon.ico')}}">
+    <link rel="icon" href="{{ asset('favicon.ico')}}">
 
 
 </head>

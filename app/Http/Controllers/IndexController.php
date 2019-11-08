@@ -83,6 +83,11 @@ class IndexController extends Controller
         return view('recruit.info');
     }
 
+    public function login_error(Request $request)
+    {
+        return view('recruit.login_error');
+    }
+
 }
 
 
