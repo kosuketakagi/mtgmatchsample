@@ -21,7 +21,7 @@ class CreateRecruitTable extends Migration
             $table->string('pref_id');
             $table->string('shop');
             $table->string('format');
-            $table->string('body');
+            $table->text('body');
             $table->timestamps();
         });
     }

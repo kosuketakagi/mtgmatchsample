@@ -34,7 +34,7 @@
                     </ul>
 
                     <div class="body mt-3">
-                        {{ $posts->body}}
+                        {!! nl2br($posts->body) !!}
                     </div>
                 </div>
 
