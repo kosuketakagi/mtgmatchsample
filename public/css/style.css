@@ -3,13 +3,6 @@
       padding: 0px;
   }
 
-  /* @media screen and (min-width:499x)  { 
-    .logo{
-      width: auto;
-      height: 30px;
-    }
-
-    } */
 
     
 /* ヘッダー */
@@ -19,7 +12,9 @@ header {
     background: white;
     display:flex;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    
+    position: sticky;
+    top: 0;
+    z-index: 9999999999;
       }
 
 .logo{
@@ -36,6 +31,7 @@ header {
     display:inline-block;
     margin-top: auto; 
   margin-bottom: auto; 
+
   }
   
   /*チェックボックス等は非表示に*/
@@ -49,6 +45,7 @@ header {
     width: 30px;
     height: 22px;
     vertical-align: middle;
+    z-index: 9999;
   }
   
   /*ハンバーガーアイコンをCSSだけで表現*/
@@ -61,6 +58,7 @@ header {
     display: block;
     content: '';
     cursor: pointer;
+    z-index: 9999;
   }
   #nav-open span:before {
     bottom: -8px;
@@ -73,7 +71,6 @@ header {
   #nav-close {
     display: none;/*はじめは隠しておく*/
     position: fixed;
-    z-index: 99;
     top: 0;/*全体に広がるように*/
     left: 0;
     width: 100%;
@@ -81,6 +78,7 @@ header {
     background: black;
     opacity: 0;
     transition: .3s ease-in-out;
+    
   }
   
   /*中身*/
@@ -89,9 +87,9 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;/*最前面に*/
-    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-    max-width: 330px;/*最大幅（調整してください）*/
+    z-index: 9999999999999;/*最前面に*/
+    width: 80%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 250px;/*最大幅（調整してください）*/
     height: 100%;
     background: #fff;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
@@ -133,6 +131,7 @@ header {
   height: auto;
   margin-bottom: 10px;
 }
+
 .top-button{
   display: flex;
   justify-content: space-around;
@@ -143,7 +142,8 @@ header {
 .top-match{
   border-bottom: solid 3px skyblue;
   position: relative;
-  font-style: italic 
+  font-style: italic; 
+  z-index: 0;
 }
 
 .top-match:before {
@@ -153,6 +153,7 @@ header {
   border-bottom: solid 3px #ffc778;
   bottom: -3px;
   width: 30%;
+  z-index: 0;
 }
 
 .top-mess{
@@ -161,6 +162,9 @@ header {
   font-size:20px;
 }
 
+ul {
+  list-style: none;
+}
 
 main.ul{
   list-style: none;
@@ -235,6 +239,7 @@ main.li{
 
 .index-ul{
   padding: 0;
+  z-index:0;
 }
 
 .index-ul li {
@@ -247,12 +252,14 @@ main.li{
   vertical-align: middle;
   color: #505050;
   border-radius: 15px 0px 0px 15px;/*左側の角丸く*/
+  z-index:0;
 }
 
 .index-strong{
   margin-left: 3px;
   margin-right: 3px;
   border-bottom: solid 3px #87CEFA;
+  z-index:0;
 }
 
 .index-button {
@@ -350,5 +357,32 @@ main.li{
 
 footer{
 background-color: lightcyan;
-opacity: 0.5;
+z-index: 1;
+}
+
+@media screen and (min-width: 800px) { 
+
+  .top-button{
+    display: flex;
+  justify-content:center;
+  margin: 20px;
+  margin-bottom: 40px;
+  }
+  
+  .raised-button{    
+    font-size: 25px;/*文字サイズ*/
+    margin: 20px;
+  }
+
+  .top-comments{
+    text-align: center;
+  }
+
+  main{
+    margin-left: 400px;
+    margin-right: 400px;
+  }
+  #nav-content{
+    transform: none;
+  }
 }

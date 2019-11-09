@@ -3,7 +3,7 @@
 
 
 @section('content')
-<div class="top-image"><img src="{{ asset('images/ddg-29-heroes-reunion.jpg')}}" class="top-image"></div>
+<img src="{{ asset('images/ddg-29-heroes-reunion.jpg')}}" class="top-image">
 <div class="top-button">
     <button type="button" class="raised-button" onclick="location.href='./index'">探してみる！</button>
     <button type="button" class="raised-button" onclick="location.href='./admin/recruit/create'">募集してみる！</button>
@@ -25,7 +25,6 @@
     <h2 class="top-mess">マジックをもっと身近に楽しもう！</h2>
 </div>
 
-</div>
 
 
 @endsection
