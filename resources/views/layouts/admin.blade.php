@@ -28,8 +28,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <link rel="stylesheet" href="wide.css" media="screen and (min-width:1024px)">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 {{--    twitterカード--}}
