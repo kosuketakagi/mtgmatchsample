@@ -95,11 +95,14 @@
     </div>
 
     <div class="col-md-4">
-        <form action="{{ action('Admin\RecruitController@delete') }}" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="{{ $post->id }}">
+        <form action="{{ action('Admin\RecruitController@delete') }}" method="post" enctype="multipart/form-data" >
+        <input type="hidden" name="id" value="{{ $post->id }}" >
             {{ csrf_field() }}
-            <input type="submit" class="btn-danger" value="削除">
+
+            <input type="submit" class="btn-danger" value="削除" onClick="delete_alert(event);return false;">
+
        <form>
+
     </div>
 
 @endsection

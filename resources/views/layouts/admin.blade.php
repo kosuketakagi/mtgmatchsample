@@ -94,7 +94,7 @@
 
 
     <footer>
-        <a class="footer-text">© MTG Match by @sugarlessMTG</a>
+       © MTG Match by @sugarlessMTG
     </footer>
 
 </body>

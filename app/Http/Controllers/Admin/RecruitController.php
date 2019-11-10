@@ -30,8 +30,16 @@ class RecruitController extends Controller
         $recruit->fill($form);
         $recruit->save();
 
-        return redirect('admin/recruit/create');
+        return view('admin/recruit/tweet',['recruit' => $recruit]);
+
     }
+
+    public function tweet(Request $request)
+    {
+
+        return view('admin/recruit/tweet');
+
+   }
 
     public function edit(Request $request)
     {

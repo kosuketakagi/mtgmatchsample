@@ -15,6 +15,7 @@ Route::group(['middleware' => 'auth','prefix' => 'admin'], function() {
     Route::get('recruit/request', 'Admin\RecruitController@requestIndex');
     Route::post('recruit/request/approval', 'Admin\RecruitController@approval');
     Route::post('recruit/request/notapproval', 'Admin\RecruitController@notApproval');
+    Route::get('recruit/create/tweet', 'Admin\RecruitController@tweet');
 });
 
 Route::get('index', 'IndexController@index');
