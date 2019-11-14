@@ -39,11 +39,18 @@ class LoginController extends Controller
         //emailで登録を調べる
         $user = User::where(['email' => $userSocial->getEmail()])->first();
 
+
         //登録（email）の有無で分岐
         if($user){
 
             //登録あればそのままログイン（2回目以降）
             Auth::login($user);
+
+            if(empty($user->avatar)){
+                $user->avatar = $userSocial->getAvatar();
+                $user->save();
+            }
+
             return redirect('/home');
 
         }else{
@@ -53,13 +60,8 @@ class LoginController extends Controller
             $newuser->name = $userSocial->getName();
             $newuser->email = $userSocial->getEmail();
             $newuser->twitter_id = $userSocial->getNickname();
+            $newuser->avatar = $userSocial->getAvatar();
 
-//            $img = file_get_contents($userSocial->avatar_original);
-//            if ($img !== false) {
-//                $file_name = $userSocial->id . '_' . uniqid() . '.jpg';
-//                Storage::put('public/profile_images/' . $file_name, $img);
-//                $newuser->avatar = $file_name;
-//            }
 
             $newuser->save();
 

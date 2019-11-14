@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $tags = ['スタンダード', 'モダン', 'レガシー', '統率者','Pauper','パイオニア','旧枠モダン','ドラフト','シールド'];
+        foreach ($tags as $tag) App\Tag::create(['name' => $tag]);
     }
 }

@@ -33,5 +33,9 @@ class Recruit extends Model
         return $this->hasMany('App\reqs')->where('approval', '=', 1);
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag');
+    }
 
 }

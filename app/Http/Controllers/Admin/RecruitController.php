@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Recruit;
+use App\Tag;
 use App\reqs;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Validation;
@@ -17,18 +18,26 @@ class RecruitController extends Controller
 {
     public function add() {
         $user = Auth::user();
-        return view('admin/recruit/create', ['user' => $user]);
+        $tag = new Tag;
+        $tags = $tag->get();
+        return view('admin/recruit/create', ['user' => $user,'tags' => $tags]);
     }
 
     public function create(Request $request)
     {
         $this->validate($request, Recruit::$rules);
-
         $recruit = new Recruit;
+
         $form = $request->all();
 
+        unset($form['format']);
         $recruit->fill($form);
         $recruit->save();
+
+
+        $recruit->tags()->attach($request->format);
+
+
 
         return view('admin/recruit/tweet',['recruit' => $recruit]);
 

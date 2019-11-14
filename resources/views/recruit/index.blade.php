@@ -17,7 +17,7 @@
                         </div>
 
                        <ul class="index-ul">
-                           <li> twitter-name<b class="index-strong"> {{$recruit->user->name }}</b></li>
+                           <li><img src="{{$recruit->user->avatar}}" class="twitter-avatar">&nbsp; <b class="index-strong">{{$recruit->user->name}}</b>&nbsp;さんより</li>
                            <li>遊びやすい日<b class="index-strong">{{$recruit->time}}</b> </li>
                            <li>
                             対戦希望フォーマット<b class="index-strong">{{ str_limit($recruit->format, 20) }}</b>

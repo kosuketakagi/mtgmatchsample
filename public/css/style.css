@@ -376,6 +376,11 @@ main.li{
   text-shadow: none;
 }
 
+.twitter-avatar{
+  magin-right:3px;
+  size:70%;
+}
+
 footer{
 background-color: lightcyan;
 }
@@ -402,7 +407,7 @@ background-color: lightcyan;
     margin-left: 400px;
     margin-right: 400px;
   }
-  
+
   #nav-content{
     transform: none;
   }
