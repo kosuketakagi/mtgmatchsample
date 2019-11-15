@@ -16,8 +16,13 @@
                 <ul class="index-ul">
                     <li><img src="{{$posts->user->avatar}}" class="twitter-avatar">&nbsp; <b class="index-strong"><a href="https://twitter.com/{{($posts->user->twitter_id)}}">{{$posts->user->name }}</a></b>&nbsp;さんより</li>
                     <li>遊びやすい日<b class="index-strong">{{$posts->time}}</b> </li>
-                    <li>
-                        対戦希望フォーマット<b class="index-strong">{{$posts->format}}</b>
+                    <li>フォーマット
+                        <b class="index-strong">
+                            {{ $posts->format}}
+                            @foreach($posts->tags as $format)
+                                {{ $format->name}},
+                            @endforeach
+                        </b>
                     </li>
 
                     <li>ショップ名<b class="index-strong">{{ $posts->shop}}</b>// {{ str_limit($posts->pref_id, 10) }} </li>

@@ -131,7 +131,7 @@
                             <label class="col-md-2" for="format">対戦希望フォーマット</label>
                             <div class="col-md-10">
                                 @foreach ($tags as $tag)
-                                    <input type="checkbox" name="format[]" value="{{ $tag->id }}">{{ $tag->name }}
+                                    <input type="checkbox" name="format[]" value="{{ $tag->id }}">{{ $tag->name }}<br>
                                 @endforeach
                             </div>
                         </div>

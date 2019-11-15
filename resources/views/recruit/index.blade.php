@@ -19,11 +19,16 @@
                        <ul class="index-ul">
                            <li><img src="{{$recruit->user->avatar}}" class="twitter-avatar">&nbsp; <b class="index-strong">{{$recruit->user->name}}</b>&nbsp;さんより</li>
                            <li>遊びやすい日<b class="index-strong">{{$recruit->time}}</b> </li>
-                           <li>
-                            対戦希望フォーマット<b class="index-strong">{{ str_limit($recruit->format, 20) }}</b>
+                           <li>フォーマット
+                             <b class="index-strong">
+                                   {{ $recruit->format}}
+                                   @foreach($recruit->tags as $format)
+                                       {{ $format->name}},
+                                   @endforeach
+                               </b>
                             </li>
 
-                           <li>ショップ名<b class="index-strong">{{ str_limit($recruit->shop, 20) }}</b>// {{ str_limit($recruit->pref_id, 10) }} </li>
+                           <li>ショップ名<b class="index-strong">{{ str_limit($recruit->shop, 20) }}</b>// {{$recruit->pref_id}} </li>
 
                        </ul>
 

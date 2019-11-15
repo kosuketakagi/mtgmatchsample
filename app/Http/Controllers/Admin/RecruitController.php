@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Recruit;
-use App\Tag;
 use App\reqs;
+use App\Tag;
+use App\Recruit_tag;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Validation;
 use App\Comment;
@@ -37,8 +38,6 @@ class RecruitController extends Controller
 
         $recruit->tags()->attach($request->format);
 
-
-
         return view('admin/recruit/tweet',['recruit' => $recruit]);
 
     }
@@ -53,8 +52,10 @@ class RecruitController extends Controller
     public function edit(Request $request)
     {
         $post = Recruit::find($request->id);
+        $tag = new Tag;
+        $tags = $tag->get();
 
-        return view('admin/recruit/edit', ['post' => $post]);
+        return view('admin/recruit/edit', ['post' => $post,'tags' => $tags]);
     }
 
     public function update(Request $request)
@@ -64,13 +65,16 @@ class RecruitController extends Controller
         $recruit = Recruit::find($request->id);
 
         $recruits_form = $request->all();
+        unset($recruits_form['format']);
 
-        //dd($recruits_form);
         $recruit->fill($recruits_form);
         unset($recruits_form['_token']);
-
         $recruit->save();
-       // dd($recruit);
+
+        Recruit_tag::where('recruit_id',$request->id)->get()->each->delete();
+
+        $recruit->tags()->attach($request->format);
+
         return redirect('admin/recruit/mypage');
     }
 

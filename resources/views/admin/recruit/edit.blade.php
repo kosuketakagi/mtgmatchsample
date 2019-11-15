@@ -43,16 +43,9 @@
                         <div class="form-group row">
                             <label class="col-md-2" for="format">フォーマット</label>
                             <div class="col-md-10">
-                                <select type="text" class="form-control" name="format" value="{{ $post->format }}">
-                                <option value="スタンダード">スタンダード</option>
-                                <option value="モダン">モダン</option>
-                                <option value="レガシー">レガシー</option>
-                                <option value="統率者">統率者</option>
-                                <option value="シールド">シールド</option>
-                                <option value="ドラフト">ドラフト</option>
-                                <option value="Pauper">Pauper</option>
-                                <option value="旧枠モダン">旧枠モダン</option>
-                                </select>
+                                @foreach ($tags as $tag)
+                                    <input type="checkbox" name="format[]" value="{{ $tag->id }}">{{ $tag->name }}<br>
+                                @endforeach
                             </div>
                         </div>
 
@@ -69,9 +62,6 @@
                                 <input type="text" class="form-control" name="pref_id" value="{{ $post->pref_id}}">
                             </div>
                         </div>
-
-
-
 
 
                     <div class="form-group row">

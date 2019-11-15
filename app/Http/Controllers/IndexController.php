@@ -8,6 +8,9 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
 use App\Comment;
 use App\reqs;
+use App\Tag;
+
+
 
 class IndexController extends Controller
 {
